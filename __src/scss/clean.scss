@@ -1,0 +1,24 @@
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box; // есть в bootstrap-reboot
+	outline: none;
+}
+
+input,
+button,
+a {
+	outline: none;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+	margin: 0; // 1
+	font-family: inherit;
+	line-height: inherit;
+	font-size: inherit;
+}

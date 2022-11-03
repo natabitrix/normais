@@ -1,0 +1,301 @@
+a {
+	color: $yellow;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+		//color:shade-color($yellow, 30%);
+		//transition: color 2s;
+	}
+
+	&.white {
+		color: $white;
+
+		&:hover {
+			//color:$yellow;
+		}
+	}
+
+	&.underline {
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&.underline-hover {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&.decoration-none {
+		text-decoration: none !important;
+	}
+}
+
+.btn {
+	font-family: $Rodeo;
+	font-weight: normal;
+	font-size: 16px;
+	border: 0;
+	color: $bg;
+	text-align: center;
+	text-decoration: none !important;
+	vertical-align: middle;
+	white-space: nowrap;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	background: linear-gradient(354.25deg, #FE5B05 -13.55%, #FEBD5A 91.25%);
+	box-shadow: 0px 4px 14px #2A2E36, inset 0px -1px 0px #FFBA57;
+	text-shadow: 0px 1px 0px #FFB856;
+	border-radius: 60px;
+
+	//-webkit-user-select: none;
+	//-moz-user-select: none;
+	//user-select: none;
+	padding: 0 36px;
+	height: 42px;
+	transition: color .20s ease-in-out, background-color .20s ease-in-out, border-color .20s ease-in-out; //www
+
+	@include media-breakpoint-down(xl) {}
+
+	&:hover {
+		cursor: pointer;
+		background-color: $yellow;
+		background: linear-gradient(1.58deg, #FEBD5A -21%, #FE5B05 136.27%);
+		box-shadow: 0px 4px 14px #2A2E36, inset 0px 1px 0px #FFBA57;
+	}
+
+	&.no-btn:hover {
+		cursor: text;
+		background-color: $white;
+	}
+
+	&.no-border {
+		border: none;
+	}
+
+	&.no-bg {
+		background: none;
+		box-shadow: none;
+		padding: 0;
+	}
+
+	&.btn-simple {
+		background: none;
+		box-shadow: none;
+		border: 1px solid $gray4;
+		background-color: $bg;
+		padding: 0;
+		&:hover {
+			background-color: $gray3!important;
+		}
+	}
+
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+
+	&.btn__yellow {
+		background-color: $yellow;
+
+		&:hover {
+			background-color: $white;
+		}
+
+		&.no-btn:hover {
+			background-color: $yellow;
+		}
+	}
+
+	&.btn__dark {
+		background-color: $dark;
+		border-color: $dark;
+		color: $white;
+
+		&:hover {
+			background-color: $white;
+			color: $black;
+		}
+
+		&.no-btn:hover {
+			background-color: $dark;
+			color: $white;
+		}
+	}
+
+	&-circle-56 {
+		width: 46px;
+		height: 46px;
+
+		img {
+			width: 12px;
+		}
+
+		@include media-breakpoint-up(sm) {
+			width: 56px;
+			height: 56px;
+
+			img {
+				width: 15px;
+			}
+
+		}
+	}
+
+	.icon {
+		position: relative;
+	}
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-weight: 500;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	margin-bottom: 1rem;
+	font-weight: 500;
+	line-height: 1.2
+}
+
+.h1,
+h1 {
+	font-family: $Rodeo;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 20px;
+	max-width: 900px;
+	.text-center & {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	font-weight: 400;
+
+	font-size: 30px;
+	line-height:40px;
+
+
+	@include media-breakpoint-up(md) {
+		font-size: 40px;
+		line-height: 50px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 56px;
+		line-height: 65px;
+	}
+
+
+
+}
+
+.h2,
+h2 {
+	font-family: $Rodeo;
+	font-style: normal;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin-bottom: 28px;
+
+	font-size: 25px;
+	line-height: 40px;
+
+	@include media-breakpoint-up(md) {
+		font-size: 35px;
+		line-height: 50px;
+		margin-bottom: 38px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 38px;
+		line-height: 56px;
+	}
+}
+
+.h3,
+h3 {
+	font-family: $Rodeo;
+	font-weight: 400;
+	
+	font-size: 22px;
+	line-height: 28px;
+	margin-bottom: 15px;
+
+	text-transform: uppercase;
+
+	@include media-breakpoint-up(md) {
+		font-size: 28px;
+		line-height: 34px;
+		margin-bottom: 26px;
+	}
+
+	@include media-breakpoint-up(xl) {
+		font-size: 32px;
+		line-height: 37px;
+	}
+}
+
+.h4,
+h4 {
+	font-family: $Rodeo;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	margin-bottom: 1rem;
+	@include media-breakpoint-up(md) {
+		font-size: 18px;
+		line-height: 21px;
+	}
+}
+
+.h5,
+h5 {
+	font-family: $Rodeo;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	letter-spacing: 0.04em;
+	margin-bottom: 10px;
+}
+
+.h6,
+h6 {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 26px;
+	margin-bottom: 0.2rem;
+}
+
+p {
+
+	margin-top: 0;
+	line-height: 27px;
+	margin-bottom: 20px;
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 30px;
+	}
+}
+
+
+
+

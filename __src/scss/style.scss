@@ -1,10 +1,9 @@
 //Colors
-@import 'colors';
+// @import 'colors';
 
 
 //Fonts
 $Inter : "Inter";
-$Rodeo : "Rodeo";
 
 $spacer: 1rem;
 $spacers: (
@@ -59,83 +58,22 @@ $btn-close-bg:none;
 
 @import 'bootstrap-grid-custom';
 @import "../../node_modules/bootstrap/scss/containers";
-//@import 'bootstrap-utilities-custom';
-
-
-// $modal-header-border-color: transparent;
-// $modal-content-border-color: transparent;
-// $modal-header-padding: 0;
-// $modal-inner-padding: 0;
-// $modal-content-bg: transparent;
-// $modal-content-border-radius:0;
-// $modal-backdrop-bg: black;
-// $modal-backdrop-opacity:.7;
-
-// $modal-sm: 300px;
-// $modal-md: 500px;
-// $modal-lg: 800px;
-// $modal-xl: 1140px;
-
-// @import "../../node_modules/bootstrap/scss/modal";
-// @import "../../node_modules/bootstrap/scss/close";
-
-
-// .form-control.is-invalid+label, .was-validated .form-control:invalid+label{
-// 	color:$red;
-	
-// }
-
-// .was-validated .form-check-input:invalid, .form-check-input.is-invalid {
-//     border-color: $red;
-//     box-shadow: 0 0 0 0.25rem rgb(231 57 34 / 25%);
-// }
-
-
-// $form-check-input-focus-box-shadow: none!important;
-// $form-check-input-bg: transparent;
-// $form-check-input-checked-bg-color: $black;
-// $form-check-input-checked-border-color: $black;
-// $form-check-input-focus-border: $black;
-// $form-check-input-border: 1px solid $black;
-
-// @import "../../node_modules/bootstrap/scss/forms/form-check";
-
-// $enable-validation-icons: false;
-// $form-feedback-valid-color: $black;
-// $form-feedback-invalid-color: $red;
-// @import "../../node_modules/bootstrap/scss/forms/validation";
-
-// $input-border-radius:1px;
-// @import "../../node_modules/bootstrap/scss/forms/input-group";
-
-//@import "../../node_modules/bootstrap/scss/forms/form-control";
-
-
-//@import "../../node_modules/bootstrap/scss/accordion";
-//@import "../../node_modules/bootstrap/scss/transitions";
-
-//$sl-overlay-background: black;
-//@import 'simple-lightbox';
-//@import 'fancybox';
-
-//@import 'slick';
-//@import 'slick-theme';
 
 
 @import 'mixins/functions';//миксин для осветления и затемнения кнопок
 
 
 
-@import 'swiper';
-@import 'swiper-navigation';
+// @import 'swiper';
+// @import 'swiper-navigation';
 
 
-@import "fonts";
+//@import "fonts";
 
 @import 'clean';
-@import 'typography';
+//@import 'typography';
 @import 'utilites';
-@import 'helpers';
-@import 'components';
+//@import 'helpers';
+//@import 'components';
 @import 'global';
 

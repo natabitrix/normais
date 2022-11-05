@@ -313,29 +313,28 @@ export function popoversInit() {
 /**Модальное всплывающее окно по клику на кнопку, закрытие по клику по кнопке закрытия */
 export function modals() {
 
-    if(document.querySelectorAll(".modal").length > 0)
-    {
+    if (document.querySelectorAll(".modal").length > 0) {
         Array.prototype.forEach.call(document.querySelectorAll('.modal'), (modal) => {
 
-            const modal_btn = document.querySelector('[data-modal='+modal.id+']');
+            const modal_btn = document.querySelector('[data-modal=' + modal.id + ']');
             const modal_btn_close = modal.querySelector(".modal-close");
             const modal_window = modal.querySelector(".modal-window");
             // modalHide(modal);
 
-            if(modal_btn) {
+            if (modal_btn) {
                 modal_btn.addEventListener("click", function () {
                     modalShow(modal);
                 });
             }
 
-            if(modal_btn_close) {
+            if (modal_btn_close) {
                 modal_btn_close.addEventListener("click", function () {
                     modalHide(modal);
                 });
             }
 
             modal_window.addEventListener("click", function (event) {
-                if(event.target.parentNode.id == modal.id)
+                if (event.target.parentNode.id == modal.id)
                     modalHide(modal);
             });
 
@@ -345,33 +344,33 @@ export function modals() {
 
     function modalShow(thisModal) {
         thisModal.style.display = "block";
-        setTimeout(function() { 
+        setTimeout(function () {
             thisModal.classList.add("active");
             document.querySelector('body').classList.add("lock");
-            thisModal.setAttribute('data-hidden', 'false'); 
+            thisModal.setAttribute('data-hidden', 'false');
         }, 30);
 
-        
+
     }
 
-    function modalHide(thisModal) {      
+    function modalHide(thisModal) {
         thisModal.classList.remove("active");
         thisModal.setAttribute('data-hidden', 'true');
-        setTimeout(function() { 
+        setTimeout(function () {
             thisModal.style.display = "none";
         }, 100);
 
         var openedModal = 0;
         Array.prototype.forEach.call(document.querySelectorAll('.modal'), (modal) => {
-            if(modal.getAttribute('data-hidden') == 'false') {
+            if (modal.getAttribute('data-hidden') == 'false') {
                 openedModal++;
             }
         });
 
-        if(openedModal == 0) {
+        if (openedModal == 0) {
             document.querySelector('body').classList.remove("lock");
         }
-            
+
     }
 }
 
@@ -393,7 +392,7 @@ export function tabs() {
     Array.prototype.forEach.call(document.querySelectorAll('[data-modal]'), function (modal_btn) {
         modal_btn.addEventListener("click", function () {
             const modal = document.getElementById(modal_btn.getAttribute('data-modal'));
-            if(modal.querySelector(".tabs")){
+            if (modal.querySelector(".tabs")) {
                 var tabListModal = modal.querySelectorAll(".tab-list-item");
                 tabsHide();
                 tabShow(tabListModal[0]);
@@ -424,61 +423,9 @@ export function tabs() {
         Array.prototype.forEach.call(tabContent, function (tabContentItem) {
             tabContentItem.classList.add("d-none");
         });
-        
+
     }
 
-
-}
-
-/**
- *  var arrInteractiveSvg = []; 
- *  arrInteractiveSvg.push(
-		{"id":"korpus_263", "modal":"modal-korpus_263"},
-		{"id":"korpus_86", "link":"https://alshemali.kz/"},
-		{"id":"korpus1_etazh1_room14", "modal":"modal-korpus1_etazh1_room14"});
-    flsFunctions.interactiveSvg(arrInteractiveSvg);
-    id задаются в svg, а также дублируются в св-ве элемента, 
-    а затем в шаблоне добавляются в скрипте в массив
- */
-
-export function interactiveSvg(arrPath) {
-    
-    Array.prototype.forEach.call(arrPath, (pathElement) => {
-
-        const pathID = pathElement.id;  
-        const path = document.getElementById(pathID); //ищем в svg эл-т с таким id
-        if(path) {
-            const containerSvg = path.closest('svg'); //ищем родительский svg, чтобы вставить копии эл-тов
-            const clone_path = path.cloneNode(true);
-            if(containerSvg) {
-                containerSvg.append(clone_path);
-                path.removeAttribute("id");
-                path.classList.add('interactive'); //здесь мы добавляем класс, чтобы управлять фоном эл-та
-                clone_path.classList.add('over'); //здесь мы добавляем класс, чтобы сделать его прозрачным и курсор при наведении
-                
-                //по клику нужно либо модальное окно {"id":"korpus_263", "modal":"modal-korpus_263"}
-                if(pathElement.modal) {
-                    clone_path.setAttribute("data-modal", pathElement.modal);
-                }
-            
-                //либо ссылка в новом окне {"id":"korpus_86", "link":"https://alshemali.kz/"}
-                if(pathElement.link) {
-                    clone_path.addEventListener('click', e => {
-                        window.open(pathElement.link, '_blank').focus();
-                    });
-                }
-
-                //меняем фон при наведении
-                clone_path.addEventListener('mouseenter', e => {
-                    path.classList.add('active');
-                });
-
-                clone_path.addEventListener('mouseleave', e => {
-                    path.classList.remove('active');
-                });
-            }
-        }
-    });
 
 }
 
@@ -490,7 +437,7 @@ export function mobileMenu() {
     const mobileHeaderHeight = mobileHeader.clientHeight;
     const menu = document.querySelector('#navbar');
 
-    if(mobileBtnOpen){
+    if (mobileBtnOpen) {
         mobileBtnOpen.addEventListener("click", function () {
             // document.querySelector('body').setAttribute('data-position', document.documentElement.scrollTop);
             document.documentElement.classList.add("mobile_menu_opened");
@@ -498,7 +445,7 @@ export function mobileMenu() {
             // document.querySelector('body').style.position = "fixed";
         });
     }
-    if(mobileBtnClose){
+    if (mobileBtnClose) {
         mobileBtnClose.addEventListener("click", function () {
             document.documentElement.classList.remove("mobile_menu_opened");
             // var pos = document.querySelector('body').getAttribute('data-position');
@@ -507,10 +454,10 @@ export function mobileMenu() {
             // document.querySelector('body').style.position = "unset";
         });
     }
-    
+
     function bodyClsScroll() {
-        if(mobileHeader) {
-            if (document.body.scrollTop > mobileHeaderHeight || 
+        if (mobileHeader) {
+            if (document.body.scrollTop > mobileHeaderHeight ||
                 document.documentElement.scrollTop > mobileHeaderHeight) {
                 document.querySelector('body').classList.add("scrolled");
             } else {
@@ -523,7 +470,7 @@ export function mobileMenu() {
         bodyClsScroll();
     });
 
-    if(menu){
+    if (menu) {
         const menu_landing_links = menu.querySelectorAll('a[href^="#"]');
         Array.prototype.forEach.call(menu_landing_links, (link) => {
             link.addEventListener("click", function () {
@@ -536,7 +483,7 @@ export function mobileMenu() {
 
 export function scrollTopButton() {
     const btn = document.getElementById("scrollTopBtn");
-    if(btn) {
+    if (btn) {
         var isMouseWheelTop;
         var lastScrollTop = 0;
         addEventListener('mousewheel', (event) => {
@@ -544,10 +491,10 @@ export function scrollTopButton() {
         });
         addEventListener('scroll', (event) => {
             var scrollTop = document.documentElement.scrollTop;
-            var isScrolledToTop = (scrollTop > lastScrollTop) ? false : true;	
+            var isScrolledToTop = (scrollTop > lastScrollTop) ? false : true;
             lastScrollTop = scrollTop;
 
-            if ((isScrolledToTop || isMouseWheelTop) && 
+            if ((isScrolledToTop || isMouseWheelTop) &&
                 (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
             ) {
                 btn.style.display = "block";
@@ -557,13 +504,10 @@ export function scrollTopButton() {
         });
 
         btn.addEventListener("click", function () {
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 }
-
-
-
 
 
 export function fixMobileWindowHeigh() {
@@ -593,3 +537,153 @@ export function fixMobileWindowHeigh() {
 //         fixed = true;
 //     }
 // }
+
+/*
+export function animationSvg() {
+
+    const numbersGroups = document.querySelectorAll('.numbers0');
+    var i = 1;
+    
+    numbersGroups.forEach(numbersGroup => {
+
+        
+
+        // let g = document.createElement('g');
+        // g.classList.add('g', 'g' + i);
+        // numbersGroup.append(g);
+        // const arrParts = [0, 1, 2];
+        
+        // const count_parts = 3;
+        // const text_length = numbersGroup.querySelectorAll('text').length;
+        // const texts_in_part = text_length / count_parts;
+
+        // for (var ii = 1; ii <= count_parts; ii++) {
+
+        //     let g = document.createElement('g');
+        //     g.classList.add('g' + i, 'g' + i + "-" + ii);
+        //     numbersGroup.append(g);
+
+        //     var iii = 1;
+        //     numbersGroup.querySelectorAll('text').forEach(txt => {
+        //         if(iii <= texts_in_part) {
+        //             numbersGroup.querySelector('g1').append(txt.cloneNode(true));
+        //         }
+        //         else if(iii > texts_in_part && iii <= texts_in_part*2)
+        //         {
+        //             numbersGroup.querySelector('g2').append(txt.cloneNode(true));
+        //         }
+        //         else if(iii > texts_in_part*2 && iii <= texts_in_part*3)
+        //         {
+        //             numbersGroup.querySelector('g3').append(txt.cloneNode(true));
+        //         }
+        //         iii++;
+        //     });
+
+
+            
+
+        // }
+
+
+
+
+
+
+
+        // let gChild1 = document.createElement('g');
+        // gChild1.classList.add('gChild1', 'gChild1'+i); 
+        // g.append(gChild1);
+
+
+        const clone_group = numbersGroup.cloneNode(true);
+
+        clone_group.classList.add('numbers'+i+'-2'); 
+
+
+
+        // var ii = 0;
+        // numbersGroup.querySelectorAll('text').forEach(text => {
+        //     if(ii >= halfNumbers)
+        //     text.remove();
+        //     ii++;
+        // });
+
+
+        var ii = 0;
+        clone_group.querySelectorAll('text').forEach(text => {
+            if(ii >= 10)
+                text.remove();
+            ii++;
+        });
+
+        numbersGroup.after(clone_group);
+
+        numbersGroup.classList.add('numbers' + i);
+
+        // numbersGroup.querySelectorAll('text').forEach(text => {
+        //     text.removeAttribute('transform');
+        // });
+
+        // const animate = () => {
+        //     numbersGroup.appendChild(numbersGroup.firstChild);
+        //     setTimeout(animate, 1000);
+        // };
+
+        // animate();
+
+        i++;
+    });
+
+}
+*/
+
+export function animationSvg() {
+
+
+    document.querySelectorAll('.numbers').forEach(numbersGroup => {
+
+        const clone_group = numbersGroup.querySelector('g').cloneNode(true);
+        clone_group.classList.add('clone');
+        numbersGroup.append(clone_group);
+
+    });
+
+
+
+    var i = 1;
+    document.querySelectorAll('.lines').forEach(linesGroup => {
+
+        linesGroup.classList.add('lines' + i);
+
+        var countLines = linesGroup.querySelectorAll('path').length;
+        var ii = 1;
+        linesGroup.querySelectorAll('path').forEach(path => {
+            if(ii > 1)
+                path.remove();
+            path.classList.add('line' + ii);
+            
+            ii++;
+        });
+
+
+
+            
+        for (var iii = 2; iii <= countLines; iii++) {
+            const path = linesGroup.querySelector('path');
+            const clone_path = path.cloneNode(true);
+            path.after(clone_path);
+            clone_path.classList.remove('line1');
+            clone_path.classList.add('line' + iii);
+        }
+
+
+
+
+
+
+
+        i++;
+    });
+
+
+}

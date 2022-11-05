@@ -45,5 +45,13 @@
     "webpack": "^5.74.0",
     "webpack-stream": "^7.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natabitrix/normais.git"
+  },
+  "bugs": {
+    "url": "https://github.com/natabitrix/normais/issues"
+  },
+  "homepage": "https://github.com/natabitrix/normais#readme",
   "description": ""
 }
